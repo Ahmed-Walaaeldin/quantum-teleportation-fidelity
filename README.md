@@ -25,30 +25,31 @@ This notebook investigates both the **ideal noiseless case** and the **noisy cas
 
 ## Main Results
 
-### 1. Ideal Teleportation Fidelity
+### 1. Convergence of Mean Fidelity
 
-The protocol reconstructs the input state with essentially perfect fidelity in the ideal simulator across a large set of Haar-random input states.
+The simulation verifies stable convergence of the running mean fidelity in both the ideal and noisy settings.  
+In the noiseless case, the protocol reaches essentially perfect fidelity, while under depolarizing noise the running average converges to a lower but stable value.
 
-![Ideal teleportation fidelity](assets/teleportation_ideal_fidelity.png)
+![Convergence of teleportation fidelity](assets/teleportation_convergence.png)
 
 ### 2. Input vs Teleported Output on the Bloch Sphere
 
-To verify state transfer geometrically, the notebook compares Bloch-vector coordinates of selected input states against their teleported outputs.  
-The overlap confirms accurate state reconstruction in the noiseless case.
+To verify state transfer geometrically, the notebook compares Bloch-vector coordinates of selected input states against their teleported outputs in the ideal case.  
+The overlap between input and output points confirms accurate state reconstruction.
 
 ![Bloch-vector comparison of input and teleported states](assets/teleportation_bloch_comparison.png)
 
 ### 3. Fidelity vs Noise Strength
 
 The notebook studies how average teleportation fidelity changes under two realistic noise models: **depolarizing noise** and **amplitude damping**.  
-This figure highlights the monotonic degradation of teleportation quality as noise strength increases.
+This figure highlights the monotonic degradation of teleportation quality as noise strength increases, and compares the results against the ideal limit and a classical fidelity threshold.
 
 ![Teleportation fidelity versus noise strength](assets/teleportation_fidelity_vs_noise.png)
 
-### 4. Fidelity Distributions Under Noise
+### 4. Fidelity Distributions Under Depolarizing Noise
 
 Beyond average fidelity, the notebook also examines full fidelity distributions at selected depolarizing noise levels.  
-This helps show how the protocol performance broadens and shifts as noise becomes stronger.
+This shows how teleportation performance shifts and becomes more concentrated at lower fidelities as noise increases.
 
 ![Fidelity distributions under depolarizing noise](assets/teleportation_fidelity_distributions.png)
 
@@ -57,6 +58,7 @@ This helps show how the protocol performance broadens and shifts as noise become
 - Confirms that the teleportation protocol reconstructs the original state with near-perfect fidelity in the noiseless case
 - Shows how fidelity decreases as noise strength increases
 - Demonstrates the protocol through both theoretical explanation and numerical simulation
+- Illustrates both average behavior and full fidelity distributions under noise
 
 ## Tools and libraries
 
